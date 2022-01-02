@@ -1,4 +1,5 @@
 from flask import Flask, request
+
 app = Flask(__name__)
 ListOfMessages = []
 
@@ -11,7 +12,7 @@ def hello_world():
 
 @app.route('/status')
 def status():
-    return{
+    return {
         'messages count': len(ListOfMessages)
     }
 
@@ -32,7 +33,7 @@ def GetMessage(id):
     if id < 0 or id >= len(ListOfMessages):
         return "Not Found", 400
     print(ListOfMessages[id])
-    return ListOfMessages[id],200
+    return ListOfMessages[id], 200
 
 
 if __name__ == '__main__':
